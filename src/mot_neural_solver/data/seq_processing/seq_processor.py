@@ -85,7 +85,7 @@ for seq_name in mot17_seqs:
         _SEQ_TYPES[seq_name] = 'MOT'
 
 # MOT15 Sequences 
-mot15_seqs = ['KITTI-17', 'KITTI-13', 'ETH-Sunnyday', 'ETH-Bahnhof', 'PETS09-S2L1', 'TUD-Campus', 'TUD-Stadtmitte']
+mot15_seqs = ['KITTI-17' , 'KITTI-13', 'ETH-Sunnyday', 'ETH-Bahnhof', 'PETS09-S2L1', 'TUD-Campus', 'TUD-Stadtmitte']
 mot15_seqs += ['ADL-Rundle-6', 'ADL-Rundle-8', 'Venice-2', 'ETH-Pedcross2']
 mot15_seqs += [seq_name + '-GT' for seq_name in mot15_seqs]
 mot15_seqs += ['Venice-1', 'KITTI-16', 'KITTI-19', 'ADL-Rundle-1', 'ADL-Rundle-3', 'AVG-TownCentre']
@@ -142,7 +142,7 @@ class MOTSeqProcessor:
     def __init__(self, dataset_path, seq_name, dataset_params, cnn_model = None, logger = None):
         self.seq_name = seq_name
         self.dataset_path = dataset_path
-        self.seq_type = _SEQ_TYPES[seq_name]
+        self.seq_type = _SEQ_TYPES[seq_name]        
 
         self.det_df_loader = _SEQ_TYPE_DETS_DF_LOADER[self.seq_type]
         self.dataset_params = dataset_params
