@@ -27,6 +27,7 @@ from lapsolver import solve_dense
 
 from mot_neural_solver.data.seq_processing.MOTCha_loader import get_mot_det_df, get_mot_det_df_from_gt
 from mot_neural_solver.data.seq_processing.MOT15_loader import get_mot15_det_df, get_mot15_det_df_from_gt
+from mot_neural_solver.data.seq_processing.CTMCV1_loader import get_ctmcv1_det_df_from_gt
 from mot_neural_solver.utils.iou import iou
 from mot_neural_solver.utils.rgb import BoundingBoxDataset
 
@@ -50,14 +51,16 @@ from torch.utils.data import DataLoader
 _SEQ_TYPE_DETS_DF_LOADER = {'MOT': get_mot_det_df,
                             'MOT_gt': get_mot_det_df_from_gt,
                             'MOT15': get_mot15_det_df,
-                            'MOT15_gt': get_mot15_det_df_from_gt}
+                            'MOT15_gt': get_mot15_det_df_from_gt,
+                            'CTMCV1_gt':get_ctmcv1_det_df_from_gt}
 
 # Determines whether boxes are allowed to have some area outside the image (all GT annotations in MOT15 are inside img
 # hence we crop its detections to also be inside it)
 _ENSURE_BOX_IN_FRAME = {'MOT': False,
                         'MOT_gt': False,
                         'MOT15': True,
-                        'MOT15_gt': False}
+                        'MOT15_gt': False,
+                        'CTMCV1_gt':False}
 
 
 # We now map each sequence name to a sequence type in _SEQ_TYPES
@@ -97,6 +100,19 @@ for seq_name in mot15_seqs:
     else:
         _SEQ_TYPES[seq_name] = 'MOT15'
 
+#CTMCV1 Sequences
+ctmcv1_seqs = ['3T3-run01']# , 'KITTI-13', 'ETH-Sunnyday', 'ETH-Bahnhof', 'PETS09-S2L1', 'TUD-Campus', 'TUD-Stadtmitte']
+# # mot15_seqs += ['ADL-Rundle-6', 'ADL-Rundle-8', 'Venice-2', 'ETH-Pedcross2']
+# mot15_seqs += [seq_name + '-GT' for seq_name in mot15_seqs]
+# mot15_seqs += ['Venice-1', 'KITTI-16', 'KITTI-19', 'ADL-Rundle-1', 'ADL-Rundle-3', 'AVG-TownCentre']
+# mot15_seqs += ['ETH-Crossing', 'ETH-Linthescher', 'ETH-Jelmoli', 'PETS09-S2L2', 'TUD-Crossing']
+# for seq_name in mot15_seqs:
+#     if 'GT' in seq_name:
+#         _SEQ_TYPES[seq_name] = 'MOT15_gt'
+
+#     else:
+#         _SEQ_TYPES[seq_name] = 'MOT15'
+_SEQ_TYPES['3T3-run01'] = 'CTMCV1_gt'
 ##########################################################################################
 # Classes used to store and process detections for every sequence
 ##########################################################################################

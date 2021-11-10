@@ -1,4 +1,20 @@
 _SPLITS = {}
+#################
+# CTMCV1
+#################
+# sequences used for training
+ctmcv1_train_seqs = ['3T3-run01'] #, 'ETH-Sunnyday', 'ETH-Bahnhof', 'PETS09-S2L1', 'TUD-Stadtmitte']
+
+# Additional train sequences not used for tranining (since they are present in MOT17 etc.)
+add_ctmcv1_train_seqs = []
+# _SPLITS['mot15_train_gt'] = {'2DMOT2015/train': [f'{seq}-GT' for seq in mot15_train_seqs]}
+_SPLITS['ctmcv1_train_gt'] = {'CTMCCVPR20/train': ctmcv1_train_seqs + add_ctmcv1_train_seqs}
+
+# Test sequences
+# test_seqs =  ['TUD-Crossing'] #, 'PETS09-S2L2', 'ETH-Jelmoli', 'ETH-Linthescher', 'ETH-Crossing', 'AVG-TownCentre',
+#                 #   'ADL-Rundle-1', 'ADL-Rundle-3', 'KITTI-16', 'KITTI-19', 'Venice-1']
+# _SPLITS['mot15_test'] = {'2DMOT2015/test': test_seqs}
+
 
 #################
 # MOT15
