@@ -11,3 +11,4 @@ pip install -e .
 bash scripts/setup/download_motcha.sh
 bash scripts/setup/download_models.sh
 bash scripts/setup/download_prepr_dets.sh
+bash scripts/setup/download_ctmcv1.sh
