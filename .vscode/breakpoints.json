@@ -1,0 +1,212 @@
+[
+  {
+    "location": "/src/mot_neural_solver/utils/evaluation.py",
+    "line": [
+      {
+        "line": 118,
+        "character": 0
+      },
+      {
+        "line": 118,
+        "character": 0
+      }
+    ],
+    "enabled": true
+  },
+  {
+    "location": "/src/mot_neural_solver/data/mot_graph_dataset.py",
+    "line": [
+      {
+        "line": 29,
+        "character": 0
+      },
+      {
+        "line": 29,
+        "character": 0
+      }
+    ],
+    "enabled": true
+  },
+  {
+    "location": "/src/mot_neural_solver/data/mot_graph_dataset.py",
+    "line": [
+      {
+        "line": 39,
+        "character": 0
+      },
+      {
+        "line": 39,
+        "character": 0
+      }
+    ],
+    "enabled": true
+  },
+  {
+    "location": "/src/mot_neural_solver/data/mot_graph_dataset.py",
+    "line": [
+      {
+        "line": 58,
+        "character": 0
+      },
+      {
+        "line": 58,
+        "character": 0
+      }
+    ],
+    "enabled": true
+  },
+  {
+    "location": "/src/mot_neural_solver/data/mot_graph_dataset.py",
+    "line": [
+      {
+        "line": 81,
+        "character": 0
+      },
+      {
+        "line": 81,
+        "character": 0
+      }
+    ],
+    "enabled": true
+  },
+  {
+    "location": "/src/mot_neural_solver/data/mot_graph_dataset.py",
+    "line": [
+      {
+        "line": 93,
+        "character": 0
+      },
+      {
+        "line": 93,
+        "character": 0
+      }
+    ],
+    "enabled": true
+  },
+  {
+    "location": "/src/mot_neural_solver/data/mot_graph_dataset.py",
+    "line": [
+      {
+        "line": 175,
+        "character": 0
+      },
+      {
+        "line": 175,
+        "character": 0
+      }
+    ],
+    "enabled": true
+  },
+  {
+    "location": "/src/mot_neural_solver/tracker/mpn_tracker.py",
+    "line": [
+      {
+        "line": 337,
+        "character": 0
+      },
+      {
+        "line": 337,
+        "character": 0
+      }
+    ],
+    "enabled": true
+  },
+  {
+    "location": "/src/mot_neural_solver/pl_module/pl_module.py",
+    "line": [
+      {
+        "line": 63,
+        "character": 0
+      },
+      {
+        "line": 63,
+        "character": 0
+      }
+    ],
+    "enabled": true
+  },
+  {
+    "location": "/src/mot_neural_solver/pl_module/pl_module.py",
+    "line": [
+      {
+        "line": 75,
+        "character": 0
+      },
+      {
+        "line": 75,
+        "character": 0
+      }
+    ],
+    "enabled": true
+  },
+  {
+    "location": "/src/mot_neural_solver/pl_module/pl_module.py",
+    "line": [
+      {
+        "line": 147,
+        "character": 0
+      },
+      {
+        "line": 147,
+        "character": 0
+      }
+    ],
+    "enabled": true
+  },
+  {
+    "location": "/src/mot_neural_solver/pl_module/pl_module.py",
+    "line": [
+      {
+        "line": 149,
+        "character": 0
+      },
+      {
+        "line": 149,
+        "character": 0
+      }
+    ],
+    "enabled": true
+  },
+  {
+    "location": "/src/mot_neural_solver/data/seq_processing/seq_processor.py",
+    "line": [
+      {
+        "line": 410,
+        "character": 0
+      },
+      {
+        "line": 410,
+        "character": 0
+      }
+    ],
+    "enabled": true
+  },
+  {
+    "location": "/src/mot_neural_solver/data/splits.py",
+    "line": [
+      {
+        "line": 11,
+        "character": 0
+      },
+      {
+        "line": 11,
+        "character": 0
+      }
+    ],
+    "enabled": true
+  },
+  {
+    "location": "/scripts/train.py",
+    "line": [
+      {
+        "line": 78,
+        "character": 0
+      },
+      {
+        "line": 78,
+        "character": 0
+      }
+    ],
+    "enabled": true
+  }
+]

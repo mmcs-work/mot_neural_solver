@@ -76,9 +76,13 @@ dataset_params:
     moving: 9
     static: 6
 
+# data_splits: # See src/mot_neural_solver/data/splits.py
+#   train: ['mot15_train_gt'] #['ctmcv1_train_gt'] #['mot15_train_gt'] #  'mot17_split_1_train_gt']
+#   val: 'split_1_val' #'split_1_ctmc_val' #'split_1_val'
+#   # test: ['mot15_test'] #, 'mot17_test']
 data_splits: # See src/mot_neural_solver/data/splits.py
   train: ['ctmcv1_train_gt'] #['mot15_train_gt'] #  'mot17_split_1_train_gt']
-  val: #'split_1_val'
+  val: 'split_1_ctmc_val' #'split_1_val'
   # test: ['mot15_test'] #, 'mot17_test']
 
 eval_params:
@@ -105,7 +109,7 @@ eval_params:
 
   # Postprocessing parameters:
   use_tracktor_start_ends: True
-  add_tracktor_detects: True
+  add_tracktor_detects: False #True
   min_track_len: 2
 
 graph_model_params:

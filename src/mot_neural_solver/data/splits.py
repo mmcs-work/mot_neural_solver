@@ -3,13 +3,13 @@ _SPLITS = {}
 # CTMCV1
 #################
 # sequences used for training
-ctmcv1_train_seqs = ['A-10-run01', '3T3-run01']#'3T3-run01','APM-run01','BPAE-run05','CV-1-run03','LLC-MK2-run07'] #, 'ETH-Sunnyday', 'ETH-Bahnhof', 'PETS09-S2L1', 'TUD-Stadtmitte']
+ctmcv1_train_seqs = ['3T3-run01']#['A-10-run01', '3T3-run01']#'3T3-run01','APM-run01','BPAE-run05','CV-1-run03','LLC-MK2-run07'] #, 'ETH-Sunnyday', 'ETH-Bahnhof', 'PETS09-S2L1', 'TUD-Stadtmitte']
 
 # Additional train sequences not used for tranining (since they are present in MOT17 etc.)
 add_ctmcv1_train_seqs = []
 # _SPLITS['mot15_train_gt'] = {'2DMOT2015/train': [f'{seq}-GT' for seq in mot15_train_seqs]}
 _SPLITS['ctmcv1_train_gt'] = {'CTMCCVPR20/train': ctmcv1_train_seqs + add_ctmcv1_train_seqs}
-
+_SPLITS['split_1_ctmc_val'] = {'CTMCCVPR20/train': ['A-10-run01']}
 # Test sequences
 # test_seqs =  ['TUD-Crossing'] #, 'PETS09-S2L2', 'ETH-Jelmoli', 'ETH-Linthescher', 'ETH-Crossing', 'AVG-TownCentre',
 #                 #   'ADL-Rundle-1', 'ADL-Rundle-3', 'KITTI-16', 'KITTI-19', 'Venice-1']
