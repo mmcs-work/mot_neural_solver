@@ -101,7 +101,15 @@ for seq_name in mot15_seqs:
         _SEQ_TYPES[seq_name] = 'MOT15'
 
 #CTMCV1 Sequences
-ctmcv1_seqs = ['3T3-run01']# , 'KITTI-13', 'ETH-Sunnyday', 'ETH-Bahnhof', 'PETS09-S2L1', 'TUD-Campus', 'TUD-Stadtmitte']
+ctmcv1_seqs = ['3T3-run01','A-10-run01','APM-run01','BPAE-run05','CV-1-run03','LLC-MK2-run07']
+ctmcv1_seqs+= ['MDBK-run09','MDOK-run09','PL1Ut-run01','U2O-S-run03','3T3-run03','A-10-run03']
+ctmcv1_seqs+= ['APM-run03','BPAE-run07','LLC-MK2-run01','MDBK-run01','MDOK-run01','OK-run01']
+ctmcv1_seqs+= ['PL1Ut-run03','U2O-S-run05','3T3-run05','A-10-run05','APM-run05','CRE-BAG2-run01']
+ctmcv1_seqs+= ['LLC-MK2-run02a','MDBK-run03','MDOK-run03','OK-run03','PL1Ut-run05','3T3-run07']
+ctmcv1_seqs+= ['A-10-run07','BPAE-run01','CRE-BAG2-run03','LLC-MK2-run03','MDBK-run05','MDOK-run05']
+ctmcv1_seqs+= ['OK-run05','RK-13-run01','3T3-run09','A-549-run03','BPAE-run03','CV-1-run01','LLC-MK2-run05']
+ctmcv1_seqs+= ['MDBK-run07','MDOK-run07','OK-run07','RK-13-run03']
+# , 'KITTI-13', 'ETH-Sunnyday', 'ETH-Bahnhof', 'PETS09-S2L1', 'TUD-Campus', 'TUD-Stadtmitte']
 # # mot15_seqs += ['ADL-Rundle-6', 'ADL-Rundle-8', 'Venice-2', 'ETH-Pedcross2']
 # mot15_seqs += [seq_name + '-GT' for seq_name in mot15_seqs]
 # mot15_seqs += ['Venice-1', 'KITTI-16', 'KITTI-19', 'ADL-Rundle-1', 'ADL-Rundle-3', 'AVG-TownCentre']
@@ -112,7 +120,9 @@ ctmcv1_seqs = ['3T3-run01']# , 'KITTI-13', 'ETH-Sunnyday', 'ETH-Bahnhof', 'PETS0
 
 #     else:
 #         _SEQ_TYPES[seq_name] = 'MOT15'
-_SEQ_TYPES['3T3-run01'] = 'CTMCV1_gt'
+for seq_name in ctmcv1_seqs:
+    _SEQ_TYPES[seq_name] = 'CTMCV1_gt'
+#_SEQ_TYPES['3T3-run01'] = 'CTMCV1_gt'
 ##########################################################################################
 # Classes used to store and process detections for every sequence
 ##########################################################################################
