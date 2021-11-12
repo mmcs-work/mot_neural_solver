@@ -3,7 +3,7 @@ _SPLITS = {}
 # CTMCV1
 #################
 # sequences used for training
-ctmcv1_train_seqs = ['A-10-run01']#'3T3-run01','APM-run01','BPAE-run05','CV-1-run03','LLC-MK2-run07'] #, 'ETH-Sunnyday', 'ETH-Bahnhof', 'PETS09-S2L1', 'TUD-Stadtmitte']
+ctmcv1_train_seqs = ['A-10-run01', '3T3-run01']#'3T3-run01','APM-run01','BPAE-run05','CV-1-run03','LLC-MK2-run07'] #, 'ETH-Sunnyday', 'ETH-Bahnhof', 'PETS09-S2L1', 'TUD-Stadtmitte']
 
 # Additional train sequences not used for tranining (since they are present in MOT17 etc.)
 add_ctmcv1_train_seqs = []
