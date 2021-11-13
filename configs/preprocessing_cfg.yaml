@@ -4,7 +4,7 @@ frcnn_weights: trained_models/frcnn/frcnn_epoch_27.pt.tar
 #frcnn_weights: trained_models/frcnn/mot20/model_epoch_27.model
 
 # List of datasets names that will be processed (see tracktor/data/factory.py)
-dataset_names: [mot15_train] #, mot15_test, mot17_train_17, mot17_test_17]
+dataset_names: [ ctmcv1_train] #ctmcv1_train] #mot15_train] #, mot15_test, mot17_train_17, mot17_test_17]
 
 # Params for preprocessing using FRCNN
 frcnn_prepr_params:
@@ -43,7 +43,7 @@ tracktor_params:
       center_only: True
     # DPM or DPM_RAW or 0, raw includes the unfiltered (no nms) versions of the provided detections,
     # 0 tells the tracker to use private detections (Faster R-CNN)
-    public_detections: True
+    public_detections: False
     # How much last appearance features are to keep
     max_features_num: 10
     # Do camera motion compensation

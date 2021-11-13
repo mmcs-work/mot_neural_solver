@@ -15,6 +15,7 @@ from mot_neural_solver.path_cfg import OUTPUT_PATH
 
 from mot_neural_solver.data.seq_processing.MOTCha_loader import MOV_CAMERA_DICT as MOT17_MOV_CAMERA_DICT
 from mot_neural_solver.data.seq_processing.MOT15_loader import MOV_CAMERA_DICT as MOT15_MOV_CAMERA_DICT
+from mot_neural_solver.data.seq_processing.CTMCV1_loader import MOV_CAMERA_DICT as CTMCV1_MOV_CAMERA_DICT
 from mot_neural_solver.data.preprocessing import FRCNNPreprocessor
 
 from mot_neural_solver.utils.misc import make_deterministic
@@ -33,7 +34,7 @@ def main(dataset_names,  prepr_w_tracktor, frcnn_prepr_params,  tracktor_params,
         prepr_params = frcnn_prepr_params
 
     make_deterministic(prepr_params['seed'])
-    MOV_CAMERA_DICT = {**MOT15_MOV_CAMERA_DICT, **MOT17_MOV_CAMERA_DICT}
+    MOV_CAMERA_DICT = {**MOT15_MOV_CAMERA_DICT, **MOT17_MOV_CAMERA_DICT, **CTMCV1_MOV_CAMERA_DICT}
 
     # object detection
     _log.info("Initializing object detector.")
