@@ -5,7 +5,7 @@ conda env create -f environment.yaml
 # conda env update -f environment.yaml
 conda activate mot_neural_solver
 rm -rf tracking_wo_bnw
-git clone https://github.com/gbraso/tracking_wo_bnw.git
+git clone https://github.com/mainakmanna/tracking_wo_bnw.git
 pip install -e tracking_wo_bnw
 pip install -e .
 bash scripts/setup/download_motcha.sh
