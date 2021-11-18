@@ -70,7 +70,7 @@ dataset_params:
     - bb_height_dists
     - bb_width_dists
     # ReID Score
-    - emb_dist
+    # - emb_dist
 
   target_fps_dict: # Frame sampling rate for sequences with static/moving camera
     moving: 9
