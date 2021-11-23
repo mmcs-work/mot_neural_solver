@@ -11,10 +11,10 @@ git reset --hard cdba41835e8ff546a7ef9c32308ff4bc29b713c5
 cd ..
 pip install -e tracking_wo_bnw
 pip install -e .
-bash scripts/setup/download_motcha.sh
+# bash scripts/setup/download_motcha.sh
 bash scripts/setup/download_models.sh
-bash scripts/setup/download_prepr_dets.sh
-# bash scripts/setup/download_ctmcv1.sh
+# bash scripts/setup/download_prepr_dets.sh
+bash scripts/setup/download_ctmcv1.sh
 git config --global user.email "moinak.manna@gmail.com"
 git config --global user.name "mainakmanna"
-
+code --install-extension ms-python.python

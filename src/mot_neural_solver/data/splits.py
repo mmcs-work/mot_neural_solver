@@ -4,12 +4,22 @@ _SPLITS = {}
 #################
 # sequences used for training
 ctmcv1_train_seqs = ['3T3-run01']#['A-10-run01', '3T3-run01']#'3T3-run01','APM-run01','BPAE-run05','CV-1-run03','LLC-MK2-run07'] #, 'ETH-Sunnyday', 'ETH-Bahnhof', 'PETS09-S2L1', 'TUD-Stadtmitte']
+all_seqs = ['3T3-run01','A-10-run01','APM-run01','BPAE-run05','CV-1-run03','LLC-MK2-run07','MDBK-run09','MDOK-run09','PL1Ut-run01','U2O-S-run03','3T3-run03','A-10-run03','APM-run03','BPAE-run07','LLC-MK2-run01','MDBK-run01','MDOK-run01','OK-run01','PL1Ut-run03','U2O-S-run05','3T3-run05','A-10-run05','APM-run05','CRE-BAG2-run01','LLC-MK2-run02a','MDBK-run03','MDOK-run03','OK-run03','PL1Ut-run05','3T3-run07','A-10-run07','BPAE-run01','CRE-BAG2-run03','LLC-MK2-run03','MDBK-run05','MDOK-run05','OK-run05','RK-13-run01','3T3-run09','A-549-run03','BPAE-run03','CV-1-run01','LLC-MK2-run05','MDBK-run07','MDOK-run07','OK-run07','RK-13-run03']
 
 # Additional train sequences not used for tranining (since they are present in MOT17 etc.)
 add_ctmcv1_train_seqs = []
 # _SPLITS['mot15_train_gt'] = {'2DMOT2015/train': [f'{seq}-GT' for seq in mot15_train_seqs]}
 _SPLITS['ctmcv1_train_gt'] = {'CTMCCVPR20/train': ctmcv1_train_seqs + add_ctmcv1_train_seqs}
-_SPLITS['split_1_ctmc_val'] = {'CTMCCVPR20/train': ['A-10-run01']}
+
+# _SPLITS['ctmcv1_split_1_train_gt'] = {'CTMCCVPR20/train': [ctmcv1_train_seqs]}
+# _SPLITS['split_1_ctmc_val'] = {'CTMCCVPR20/train': ['A-10-run01']}
+# _SPLITS['ctmcv1_split_2_train_gt'] = {'CTMCCVPR20/train': ['A-10-run01']}
+# _SPLITS['split_2_ctmc_val'] = {'CTMCCVPR20/train': ['3T3-run01']}
+
+_SPLITS['ctmcv1_split_1_train_gt'] = {'CTMCCVPR20/train': [f'{all_seqs[i]}' for i in range(len(all_seqs)) if i%2 == 0]}
+_SPLITS['split_1_ctmc_val'] = {'CTMCCVPR20/train': [f'{all_seqs[i]}' for i in range(len(all_seqs)) if i%2 == 1]}
+_SPLITS['ctmcv1_split_2_train_gt'] = {'CTMCCVPR20/train': [f'{all_seqs[i]}' for i in range(len(all_seqs)) if i%2 == 1]}
+_SPLITS['split_2_ctmc_val'] = {'CTMCCVPR20/train': [f'{all_seqs[i]}' for i in range(len(all_seqs)) if i%2 == 0]}
 # Test sequences
 # test_seqs =  ['TUD-Crossing'] #, 'PETS09-S2L2', 'ETH-Jelmoli', 'ETH-Linthescher', 'ETH-Crossing', 'AVG-TownCentre',
 #                 #   'ADL-Rundle-1', 'ADL-Rundle-3', 'KITTI-16', 'KITTI-19', 'Venice-1']
@@ -19,8 +29,9 @@ _SPLITS['split_1_ctmc_val'] = {'CTMCCVPR20/train': ['A-10-run01']}
 #################
 # MOT15
 #################
+dets = ('DPM', 'FRCNN', 'SDP')
 
-# sequences used for training
+# Train sequences:
 mot15_train_seqs = ['KITTI-17' , 'ETH-Sunnyday', 'ETH-Bahnhof', 'PETS09-S2L1', 'TUD-Stadtmitte']
 
 # Additional train sequences not used for tranining (since they are present in MOT17 etc.)
@@ -32,6 +43,31 @@ _SPLITS['mot15_train'] = {'2DMOT2015/train': mot15_train_seqs + add_mot15_train_
 test_seqs =  ['TUD-Crossing' , 'PETS09-S2L2', 'ETH-Jelmoli', 'ETH-Linthescher', 'ETH-Crossing', 'AVG-TownCentre',
                  'ADL-Rundle-1', 'ADL-Rundle-3', 'KITTI-16', 'KITTI-19', 'Venice-1']
 _SPLITS['mot15_test'] = {'2DMOT2015/test': test_seqs}
+
+
+
+train_seq_nums=  (2, 4, 5, 9, 10, 11, 13)
+_SPLITS['mot17_train_gt'] = {'MOT17Labels/train': [f'MOT17-{seq_num:02}-GT' for seq_num in train_seq_nums]}
+_SPLITS['mot17_train'] = {'MOT17Labels/train': [f'MOT17-{seq_num:02}-{det}' for seq_num in train_seq_nums for det in dets]}
+_SPLITS['mot17_train_sdp'] = {'MOT17Labels/train': [f'MOT17-{seq_num:02}-SDP' for seq_num in train_seq_nums ]}
+
+
+# Cross Validation splits
+_SPLITS['mot17_split_1_train_gt'] = {'MOT17Labels/train': [f'MOT17-{seq_num:02}-GT' for seq_num in (2, 5, 9, 10, 13)]}
+_SPLITS['split_1_val'] = {'MOT17Labels/train': [f'MOT17-{seq_num:02}-{det}' for seq_num in (4,11) for det in dets]}
+
+_SPLITS['mot17_split_2_train_gt'] = {'MOT17Labels/train': [f'MOT17-{seq_num:02}-GT' for seq_num in (2, 4, 11, 10, 13)]}
+_SPLITS['split_2_val'] = {'MOT17Labels/train': [f'MOT17-{seq_num:02}-{det}' for seq_num in (5, 9) for det in dets]}
+
+_SPLITS['mot17_split_3_train_gt'] = {'MOT17Labels/train': [f'MOT17-{seq_num:02}-GT' for seq_num in (4, 5, 9, 11)]}
+_SPLITS['split_3_val'] = {'MOT17Labels/train': [f'MOT17-{seq_num:02}-{det}' for seq_num in (2, 10, 13) for det in dets]}
+
+_SPLITS['debug'] = {'MOT17Labels/train': ['MOT17-02-FRCNN']}
+
+
+# Test sequences
+test_seq_nums=  (1, 3, 6, 7, 8, 12, 14)
+_SPLITS['mot17_test'] = {'MOT17Labels/test': [f'MOT17-{seq_num:02}-{det}' for seq_num in test_seq_nums for det in dets]}
 
 
 #################
