@@ -15,9 +15,10 @@ _SPLITS['ctmcv1_train_gt'] = {'CTMCCVPR20/train': ctmcv1_train_seqs + add_ctmcv1
 # _SPLITS['split_1_ctmc_val'] = {'CTMCCVPR20/train': ['A-10-run01']}
 # _SPLITS['ctmcv1_split_2_train_gt'] = {'CTMCCVPR20/train': ['A-10-run01']}
 # _SPLITS['split_2_ctmc_val'] = {'CTMCCVPR20/train': ['3T3-run01']}
-
-_SPLITS['ctmcv1_split_1_train_gt'] = {'CTMCCVPR20/train': [f'{all_seqs[i]}' for i in range(len(all_seqs)) if i%2 == 0]}
-_SPLITS['split_1_ctmc_val'] = {'CTMCCVPR20/train': [f'{all_seqs[i]}' for i in range(len(all_seqs)) if i%2 == 1]}
+_SPLITS['ctmcv1_split_1_train_gt'] = {'CTMCCVPR20/train': ['LLC-MK2-run07']}
+_SPLITS['split_1_ctmc_val'] = {'CTMCCVPR20/train': ['3T3-run01']}
+# _SPLITS['ctmcv1_split_1_train_gt'] = {'CTMCCVPR20/train': [f'{all_seqs[i]}' for i in range(len(all_seqs)) if i%2 == 0]}
+# _SPLITS['split_1_ctmc_val'] = {'CTMCCVPR20/train': [f'{all_seqs[i]}' for i in range(len(all_seqs)) if i%2 == 1]}
 _SPLITS['ctmcv1_split_2_train_gt'] = {'CTMCCVPR20/train': [f'{all_seqs[i]}' for i in range(len(all_seqs)) if i%2 == 1]}
 _SPLITS['split_2_ctmc_val'] = {'CTMCCVPR20/train': [f'{all_seqs[i]}' for i in range(len(all_seqs)) if i%2 == 0]}
 # Test sequences
