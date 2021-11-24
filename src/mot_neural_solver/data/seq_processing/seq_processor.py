@@ -26,6 +26,7 @@ import numpy as np
 from lapsolver import solve_dense
 
 from mot_neural_solver.data.seq_processing.MOTCha_loader import get_mot_det_df, get_mot_det_df_from_gt
+from mot_neural_solver.data.seq_processing.CTMCV1_loader_mot17 import get_ctmcv1_det_df_from_gt_mot17
 from mot_neural_solver.data.seq_processing.MOT15_loader import get_mot15_det_df, get_mot15_det_df_from_gt
 from mot_neural_solver.data.seq_processing.CTMCV1_loader import get_ctmcv1_det_df_from_gt
 from mot_neural_solver.utils.iou import iou
@@ -52,7 +53,8 @@ _SEQ_TYPE_DETS_DF_LOADER = {'MOT': get_mot_det_df,
                             'MOT_gt': get_mot_det_df_from_gt,
                             'MOT15': get_mot15_det_df,
                             'MOT15_gt': get_mot15_det_df_from_gt,
-                            'CTMCV1_gt':get_ctmcv1_det_df_from_gt}
+                            # 'CTMCV1_gt':get_ctmcv1_det_df_from_gt}
+                            'CTMCV1_gt':get_ctmcv1_det_df_from_gt_mot17}
 
 # Determines whether boxes are allowed to have some area outside the image (all GT annotations in MOT15 are inside img
 # hence we crop its detections to also be inside it)
