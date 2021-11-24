@@ -1,7 +1,7 @@
 ckpt_path: 
 train_params:
   batch_size: 8
-  num_epochs: 2
+  num_epochs: 25
   optimizer:
     type: Adam
     args:
