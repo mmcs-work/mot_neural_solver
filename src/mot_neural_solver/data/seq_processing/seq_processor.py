@@ -293,6 +293,9 @@ class MOTSeqProcessor:
         reid_embeds_path = osp.join(self.det_df.seq_info_dict['seq_path'], 'processed_data/embeddings',
                                    self.det_df.seq_info_dict['det_file_name'], self.dataset_params['reid_embeddings_dir'])
 
+        if osp.exists(node_embeds_path) and osp.exists(reid_embeds_path):
+            return
+        
         if osp.exists(node_embeds_path):
             print("Found existing stored node embeddings. Deleting them and replacing them for new ones")
             shutil.rmtree(node_embeds_path)

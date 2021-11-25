@@ -36,8 +36,8 @@ class Postprocessor:
                                         how='left', on='frame')
                 full_traj_df = full_traj_df.sort_values(by='frame').interpolate()
                 full_traj_dfs.append(full_traj_df)
-
-        self.traj_df = pd.concat(full_traj_dfs)
+        if len(full_traj_dfs) > 1:
+            self.traj_df = pd.concat(full_traj_dfs)
 
         # Recompute bb coords based on the interpolated centers, heights and widths
         self.traj_df['bb_left'] = self.traj_df['mid_x'] - 0.5 * self.traj_df['bb_width']
