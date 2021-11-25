@@ -184,7 +184,7 @@ def get_ctmcv1_det_df_from_gt_mot17(seq_name, data_root_path, dataset_params):
 
     else:
         # passing full seq path name. No modifications like "-GT" is done here.
-        det_df['frame_path'] = det_df['frame'].apply(lambda frame_num: osp.join(seq_path, f'img1/{frame_num:06}.jpg'))
+        det_df['frame_path'] = det_df['frame'].apply(lambda frame_num: osp.join(seq_path, f'img1/{frame_num:06}.jpg' if frame_num > 0 else f'img1/{1:06}.jpg'))
     assert osp.exists(det_df['frame_path'].iloc[0])
 
     seq_info_dict = _build_seq_info_dict_ctmcv1_withmot17(seq_name, data_root_path, dataset_params)
