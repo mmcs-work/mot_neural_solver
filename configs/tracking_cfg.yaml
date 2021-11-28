@@ -1,7 +1,7 @@
 ckpt_path: 
 train_params:
   batch_size: 8
-  num_epochs: 25
+  num_epochs: 1
   optimizer:
     type: Adam
     args:
@@ -17,7 +17,7 @@ train_params:
   num_workers: 6 # Used for dataloaders
   save_every_epoch: False # Determines if every a checkpoint will be saved for every epoch
   save_epoch_start: 1 # If the arg above is set to True, determines the first epoch after which we start saving ckpts
-  tensorboard: False
+  tensorboard: True
 
 dataset_params:
   # Dataset Processing params:
@@ -87,7 +87,7 @@ data_splits: # See src/mot_neural_solver/data/splits.py
 
 eval_params:
   # Logging / Metrics reporting params
-  tensorboard: False
+  tensorboard: True
   check_val_every_n_epoch: 9999
   val_percent_check: 0.15 # Percentage of the entire dataset used each time that validation loss is computed
   mot_metrics_to_log: ['mota', 'norm_mota', 'idf1', 'norm_idf1', 'num_switches', 'num_misses', 'num_false_positives', 'num_fragmentations', 'constr_sr']

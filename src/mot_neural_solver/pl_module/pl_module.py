@@ -118,7 +118,9 @@ class MOTNeuralSolver(pl.LightningModule):
         loss = self._compute_loss(outputs, batch)
         logs = {**compute_perform_metrics(outputs, batch), **{'loss': loss}}
         log = {key + f'/{train_val}': val for key, val in logs.items()}
-
+        self.trainer.logger.experiment.add_histogram("data-x", batch.x)
+        self.trainer.logger.experiment.add_histogram("data-attr", batch.edge_attr)
+        
         if train_val == 'train':
             return {'loss': loss, 'log': log}
 
