@@ -18,3 +18,4 @@ bash scripts/setup/download_ctmcv1.sh
 git config --global user.email "moinak.manna@gmail.com"
 git config --global user.name "mainakmanna"
 code --install-extension ms-python.python
+code --install-extension marp-team.marp-vscode
