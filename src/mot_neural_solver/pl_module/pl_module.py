@@ -113,9 +113,21 @@ class MOTNeuralSolver(pl.LightningModule):
     def _train_val_step(self, batch, batch_idx, train_val):
         device = (next(self.model.parameters())).device
         batch.to(device)
+        
 
         outputs = self.model(batch)
         loss = self._compute_loss(outputs, batch)
+        # For debugging purposes (Deterministic results check out)
+        # d = {
+        #     'batch': batch.batch,
+        #     'edge_attr':batch.edge_attr,
+        #     'edge_index':batch.edge_index,
+        #     'x':batch.x,
+        #     'labels':batch.edge_labels,
+        #     'outputs':outputs
+        # }
+        # torch.save(d,'batch2.pt')
+        
         logs = {**compute_perform_metrics(outputs, batch), **{'loss': loss}}
         log = {key + f'/{train_val}': val for key, val in logs.items()}
         self.trainer.logger.experiment.add_histogram("data-x", batch.x)
