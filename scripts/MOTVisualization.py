@@ -84,10 +84,16 @@ class MOTVisualizer(Visualizer):
 		return im
 
 if __name__ == "__main__":
+	# visualizer = MOTVisualizer(
+	# 	seqName = "MOT16-02",
+	# 	FilePath ="data/MOT16/train/MOT16-02/gt/gt.txt",
+	# 	image_dir = "data/MOT16/train/MOT16-02/img1",
+	# 	mode = "gt",
+	# 	output_dir  = "vid")
 	visualizer = MOTVisualizer(
-		seqName = "MOT16-02",
-		FilePath ="data/MOT16/train/MOT16-02/gt/gt.txt",
-		image_dir = "data/MOT16/train/MOT16-02/img1",
+		seqName = "A-10-run01",
+		FilePath ="/content/mot_neural_solver/output/experiments/12-01_11:44_ctmcval2_split_1/mot_files/A-10-run01.txt",
+		image_dir = "/content/mot_neural_solver/data/CTMCCVPR20/train/A-10-run01/img1",
 		mode = "gt",
 		output_dir  = "vid")
 
