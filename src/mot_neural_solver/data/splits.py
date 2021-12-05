@@ -21,25 +21,32 @@ _SPLITS['ctmcv1_train_gt'] = {'CTMCCVPR20/train': ctmcv1_train_seqs + add_ctmcv1
 #_SPLITS['ctmcv1_split_1_train_gt'] = {'CTMCCVPR20/train': ['LLC-MK2-run07']}    #
 #_SPLITS['split_1_ctmc_val'] = {'CTMCCVPR20/train': ['3T3-run01']}               #
 #################################################################################
-_SPLITS['ctmcv1_split_1_train_gt'] = {'CTMCCVPR20/train': [f'{all_seqs[i]}' for i in range(len(all_seqs)) if i%2 == 0]}
-_SPLITS['split_1_ctmc_val'] = {'CTMCCVPR20/train': [f'{all_seqs[i]}' for i in range(len(all_seqs)) if i%2 == 1]}
+# _SPLITS['ctmcv1_split_1_train_gt'] = {'CTMCCVPR20/train': [f'{all_seqs[i]}' for i in range(len(all_seqs)) if i%2 == 0]}
 # _SPLITS['split_1_ctmc_val'] = {'CTMCCVPR20/train': [f'{all_seqs[i]}' for i in range(len(all_seqs)) if i%2 == 1]}
-_SPLITS['ctmcv1_split_2_train_gt'] = {'CTMCCVPR20/train': [f'{all_seqs[i]}' for i in range(len(all_seqs)) if i%2 == 1]}
-_SPLITS['split_2_ctmc_val'] = {'CTMCCVPR20/train': [f'{all_seqs[i]}' for i in range(len(all_seqs)) if i%2 == 0]}
+# # _SPLITS['split_1_ctmc_val'] = {'CTMCCVPR20/train': [f'{all_seqs[i]}' for i in range(len(all_seqs)) if i%2 == 1]}
+# _SPLITS['ctmcv1_split_2_train_gt'] = {'CTMCCVPR20/train': [f'{all_seqs[i]}' for i in range(len(all_seqs)) if i%2 == 1]}
+# _SPLITS['split_2_ctmc_val'] = {'CTMCCVPR20/train': [f'{all_seqs[i]}' for i in range(len(all_seqs)) if i%2 == 0]}
 # Test sequences
 # test_seqs =  ['TUD-Crossing'] #, 'PETS09-S2L2', 'ETH-Jelmoli', 'ETH-Linthescher', 'ETH-Crossing', 'AVG-TownCentre',
 #                 #   'ADL-Rundle-1', 'ADL-Rundle-3', 'KITTI-16', 'KITTI-19', 'Venice-1']
 # _SPLITS['mot15_test'] = {'2DMOT2015/test': test_seqs}
 
-strat_over_framenum = [['MDBK-run09', 'MDOK-run09', 'LLC-MK2-run03', 'MDOK-run07', 'U2O-S-run05', 'U2O-S-run03', 'MDOK-run05', 'PL1Ut-run03', 'BPAE-run03', 'CRE-BAG2-run03', 'A-10-run05', 'APM-run03', 'OK-run01', 'MDBK-run01'], ['A-10-run07', '3T3-run03', '3T3-run07', 'CRE-BAG2-run01', 'LLC-MK2-run01', 'MDBK-run07', '3T3-run01', 'CV-1-run03', 'BPAE-run01', 'OK-run03', 'OK-run05'], ['BPAE-run07', '3T3-run09', '3T3-run05', 'A-10-run01', 'A-10-run03', 'LLC-MK2-run05', 'APM-run01', 'OK-run07', 'A-549-run03', 'RK-13-run01', 'MDBK-run05', 'RK-13-run03', 'MDBK-run03'], ['LLC-MK2-run07', 'MDOK-run01', 'APM-run05', 'CV-1-run01', 'BPAE-run05', 'PL1Ut-run01', 'PL1Ut-run05', 'LLC-MK2-run02a', 'MDOK-run03']]
-_SPLITS['ctmcv1_split_1_train_gt'] = {'CTMCCVPR20/train': strat_over_framenum[1]+strat_over_framenum[2]+strat_over_framenum[3]}
+# strat_over_framenum = [['MDBK-run09', 'MDOK-run09', 'LLC-MK2-run03', 'MDOK-run07', 'U2O-S-run05', 'U2O-S-run03', 'MDOK-run05', 'PL1Ut-run03', 'BPAE-run03', 'CRE-BAG2-run03', 'A-10-run05', 'APM-run03', 'OK-run01', 'MDBK-run01'], ['A-10-run07', '3T3-run03', '3T3-run07', 'CRE-BAG2-run01', 'LLC-MK2-run01', 'MDBK-run07', '3T3-run01', 'CV-1-run03', 'BPAE-run01', 'OK-run03', 'OK-run05'], ['BPAE-run07', '3T3-run09', '3T3-run05', 'A-10-run01', 'A-10-run03', 'LLC-MK2-run05', 'APM-run01', 'OK-run07', 'A-549-run03', 'RK-13-run01', 'MDBK-run05', 'RK-13-run03', 'MDBK-run03'], ['LLC-MK2-run07', 'MDOK-run01', 'APM-run05', 'CV-1-run01', 'BPAE-run05', 'PL1Ut-run01', 'PL1Ut-run05', 'LLC-MK2-run02a', 'MDOK-run03']]
+# _SPLITS['ctmcv1_split_1_train_gt'] = {'CTMCCVPR20/train': strat_over_framenum[1]+strat_over_framenum[2]+strat_over_framenum[3]}
+# _SPLITS['split_1_ctmc_val'] = {'CTMCCVPR20/train': strat_over_framenum[0]}
+# _SPLITS['ctmcv1_split_2_train_gt'] = {'CTMCCVPR20/train': strat_over_framenum[0]+strat_over_framenum[2]+strat_over_framenum[3]}
+# _SPLITS['split_2_ctmc_val'] = {'CTMCCVPR20/train': strat_over_framenum[1]}
+# _SPLITS['ctmcv1_split_3_train_gt'] = {'CTMCCVPR20/train': strat_over_framenum[0]+strat_over_framenum[1]+strat_over_framenum[3]}
+# _SPLITS['split_3_ctmc_val'] = {'CTMCCVPR20/train': strat_over_framenum[2]}
+# _SPLITS['ctmcv1_split_4_train_gt'] = {'CTMCCVPR20/train': strat_over_framenum[0]+strat_over_framenum[1]+strat_over_framenum[2]}
+# _SPLITS['split_4_ctmc_val'] = {'CTMCCVPR20/train': strat_over_framenum[3]}
+
+strat_over_framenum = [['A-10-run07', 'BPAE-run07', 'MDOK-run01', '3T3-run03', '3T3-run05', 'MDOK-run07', 'U2O-S-run05', 'U2O-S-run03', '3T3-run07', 'CRE-BAG2-run01', 'MDOK-run05', 'LLC-MK2-run01', 'PL1Ut-run03', 'MDBK-run07', 'APM-run01', '3T3-run01', 'CRE-BAG2-run03', 'OK-run07', 'A-549-run03', 'BPAE-run01', 'PL1Ut-run05', 'OK-run03', 'OK-run05', 'RK-13-run03', 'MDBK-run03', 'MDBK-run01'], ['MDBK-run09', 'LLC-MK2-run07', '3T3-run09', 'MDOK-run09', 'LLC-MK2-run03', 'APM-run05', 'A-10-run01', 'A-10-run03', 'LLC-MK2-run05', 'CV-1-run01', 'BPAE-run03', 'BPAE-run05', 'PL1Ut-run01', 'CV-1-run03', 'A-10-run05', 'RK-13-run01', 'MDBK-run05', 'APM-run03', 'OK-run01', 'LLC-MK2-run02a', 'MDOK-run03']]
+_SPLITS['ctmcv1_split_1_train_gt'] = {'CTMCCVPR20/train': strat_over_framenum[1]}
 _SPLITS['split_1_ctmc_val'] = {'CTMCCVPR20/train': strat_over_framenum[0]}
-_SPLITS['ctmcv1_split_2_train_gt'] = {'CTMCCVPR20/train': strat_over_framenum[0]+strat_over_framenum[2]+strat_over_framenum[3]}
+_SPLITS['ctmcv1_split_2_train_gt'] = {'CTMCCVPR20/train': strat_over_framenum[0]}
 _SPLITS['split_2_ctmc_val'] = {'CTMCCVPR20/train': strat_over_framenum[1]}
-_SPLITS['ctmcv1_split_3_train_gt'] = {'CTMCCVPR20/train': strat_over_framenum[0]+strat_over_framenum[1]+strat_over_framenum[3]}
-_SPLITS['split_3_ctmc_val'] = {'CTMCCVPR20/train': strat_over_framenum[2]}
-_SPLITS['ctmcv1_split_4_train_gt'] = {'CTMCCVPR20/train': strat_over_framenum[0]+strat_over_framenum[1]+strat_over_framenum[2]}
-_SPLITS['split_4_ctmc_val'] = {'CTMCCVPR20/train': strat_over_framenum[3]}
+
 
 
 
