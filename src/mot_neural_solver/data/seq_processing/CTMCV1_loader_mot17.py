@@ -77,7 +77,11 @@ def _build_seq_info_dict_ctmcv1_withmot17(seq_name, data_root_path, dataset_para
     info_file_path = osp.join(data_root_path, seq_name, 'seqinfo.ini')
     cp = configparser.ConfigParser()
     cp.read(info_file_path)
-
+    """
+     center_feet is added to have different feet edge feature creation
+     True: calcuate the feet to be in center of bbox
+     False: calcuate the feet to be in bottom of bbox
+    """
     seq_info_dict = {'seq': seq_name,
                      'seq_path': osp.join(data_root_path, seq_name),
                      'det_file_name': dataset_params['det_file_name'],
@@ -89,7 +93,9 @@ def _build_seq_info_dict_ctmcv1_withmot17(seq_name, data_root_path, dataset_para
                      'fps': int(cp.get('Sequence', 'frameRate')),
                      'mov_camera': MOV_CAMERA_DICT[seq_name],
 
-                     'has_gt': osp.exists(osp.join(data_root_path, seq_name, 'gt'))}
+                     'has_gt': osp.exists(osp.join(data_root_path, seq_name, 'gt')),
+                     'center_feet': True
+                     }
     return seq_info_dict
 
 def get_mot_det_df(seq_name, data_root_path, dataset_params):

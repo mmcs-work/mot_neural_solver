@@ -247,8 +247,13 @@ class MOTSeqProcessor:
         self.det_df['bb_bot'] = (self.det_df['bb_top'] + self.det_df['bb_height']).values
         self.det_df['bb_right'] = (self.det_df['bb_left'] + self.det_df['bb_width']).values
         self.det_df['feet_x'] = self.det_df['bb_left'] + 0.5 * self.det_df['bb_width']
-        self.det_df['feet_y'] = self.det_df['bb_top'] + self.det_df['bb_height']
 
+        # Center feet for cell tracking
+        if 'center_feet' in self.det_df.seq_info_dict.keys() and self.det_df.seq_info_dict['center_feet'] == True:
+            self.det_df['feet_y'] = self.det_df['bb_top'] + 0.5 * self.det_df['bb_height']
+        else:
+            self.det_df['feet_y'] = self.det_df['bb_top'] + self.det_df['bb_height']
+        
         # Just a sanity check. Sometimes there are boxes that lay completely outside the frame
         frame_height, frame_width = self.det_df.seq_info_dict['frame_height'], self.det_df.seq_info_dict['frame_width']
         conds = (self.det_df['bb_width'] > 0) & (self.det_df['bb_height'] > 0)
