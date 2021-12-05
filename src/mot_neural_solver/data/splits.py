@@ -4,7 +4,7 @@ _SPLITS = {}
 #################
 # sequences used for training
 ctmcv1_train_seqs = ['3T3-run01']#['A-10-run01', '3T3-run01']#'3T3-run01','APM-run01','BPAE-run05','CV-1-run03','LLC-MK2-run07'] #, 'ETH-Sunnyday', 'ETH-Bahnhof', 'PETS09-S2L1', 'TUD-Stadtmitte']
-all_seqs = ['3T3-run01','A-10-run01','APM-run01','BPAE-run05','CV-1-run03','LLC-MK2-run07','MDBK-run09','MDOK-run09','PL1Ut-run01','U2O-S-run03','3T3-run03','A-10-run03','APM-run03','BPAE-run07','LLC-MK2-run01','MDBK-run01','MDOK-run01','OK-run01','PL1Ut-run03','U2O-S-run05','3T3-run05','A-10-run05','APM-run05','CRE-BAG2-run01','LLC-MK2-run02a','MDBK-run03','MDOK-run03','OK-run03','PL1Ut-run05','3T3-run07','A-10-run07','BPAE-run01','CRE-BAG2-run03','LLC-MK2-run03','MDBK-run05','MDOK-run05','OK-run05','RK-13-run01','3T3-run09','A-549-run03','BPAE-run03','CV-1-run01','LLC-MK2-run05','MDBK-run07','MDOK-run07','OK-run07','RK-13-run03']
+all_seqs = ['3T3-run01','A-10-run01'] #,'APM-run01','BPAE-run05','CV-1-run03','LLC-MK2-run07','MDBK-run09','MDOK-run09','PL1Ut-run01','U2O-S-run03','3T3-run03','A-10-run03','APM-run03','BPAE-run07','LLC-MK2-run01','MDBK-run01','MDOK-run01','OK-run01','PL1Ut-run03','U2O-S-run05','3T3-run05','A-10-run05','APM-run05','CRE-BAG2-run01','LLC-MK2-run02a','MDBK-run03','MDOK-run03','OK-run03','PL1Ut-run05','3T3-run07','A-10-run07','BPAE-run01','CRE-BAG2-run03','LLC-MK2-run03','MDBK-run05','MDOK-run05','OK-run05','RK-13-run01','3T3-run09','A-549-run03','BPAE-run03','CV-1-run01','LLC-MK2-run05','MDBK-run07','MDOK-run07','OK-run07','RK-13-run03']
 
 # Additional train sequences not used for tranining (since they are present in MOT17 etc.)
 add_ctmcv1_train_seqs = []
@@ -30,6 +30,17 @@ _SPLITS['split_2_ctmc_val'] = {'CTMCCVPR20/train': [f'{all_seqs[i]}' for i in ra
 # test_seqs =  ['TUD-Crossing'] #, 'PETS09-S2L2', 'ETH-Jelmoli', 'ETH-Linthescher', 'ETH-Crossing', 'AVG-TownCentre',
 #                 #   'ADL-Rundle-1', 'ADL-Rundle-3', 'KITTI-16', 'KITTI-19', 'Venice-1']
 # _SPLITS['mot15_test'] = {'2DMOT2015/test': test_seqs}
+
+strat_over_framenum = [['MDBK-run09', 'MDOK-run09', 'LLC-MK2-run03', 'MDOK-run07', 'U2O-S-run05', 'U2O-S-run03', 'MDOK-run05', 'PL1Ut-run03', 'BPAE-run03', 'CRE-BAG2-run03', 'A-10-run05', 'APM-run03', 'OK-run01', 'MDBK-run01'], ['A-10-run07', '3T3-run03', '3T3-run07', 'CRE-BAG2-run01', 'LLC-MK2-run01', 'MDBK-run07', '3T3-run01', 'CV-1-run03', 'BPAE-run01', 'OK-run03', 'OK-run05'], ['BPAE-run07', '3T3-run09', '3T3-run05', 'A-10-run01', 'A-10-run03', 'LLC-MK2-run05', 'APM-run01', 'OK-run07', 'A-549-run03', 'RK-13-run01', 'MDBK-run05', 'RK-13-run03', 'MDBK-run03'], ['LLC-MK2-run07', 'MDOK-run01', 'APM-run05', 'CV-1-run01', 'BPAE-run05', 'PL1Ut-run01', 'PL1Ut-run05', 'LLC-MK2-run02a', 'MDOK-run03']]
+_SPLITS['ctmcv1_split_1_train_gt'] = {'CTMCCVPR20/train': strat_over_framenum[1]+strat_over_framenum[2]+strat_over_framenum[3]}
+_SPLITS['split_1_ctmc_val'] = {'CTMCCVPR20/train': strat_over_framenum[0]}
+_SPLITS['ctmcv1_split_2_train_gt'] = {'CTMCCVPR20/train': strat_over_framenum[0]+strat_over_framenum[2]+strat_over_framenum[3]}
+_SPLITS['split_2_ctmc_val'] = {'CTMCCVPR20/train': strat_over_framenum[1]}
+_SPLITS['ctmcv1_split_3_train_gt'] = {'CTMCCVPR20/train': strat_over_framenum[0]+strat_over_framenum[1]+strat_over_framenum[3]}
+_SPLITS['split_3_ctmc_val'] = {'CTMCCVPR20/train': strat_over_framenum[2]}
+_SPLITS['ctmcv1_split_4_train_gt'] = {'CTMCCVPR20/train': strat_over_framenum[0]+strat_over_framenum[1]+strat_over_framenum[2]}
+_SPLITS['split_4_ctmc_val'] = {'CTMCCVPR20/train': strat_over_framenum[3]}
+
 
 
 #################
