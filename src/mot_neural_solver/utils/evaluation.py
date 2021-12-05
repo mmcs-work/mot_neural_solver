@@ -123,6 +123,22 @@ class MOTMetricsLogger(Callback):
             save_pickle(mot_metrics_summary.to_dict(), oracle_path)
             trainer.oracle_metrics = mot_metrics_summary
 
+        # Compute MOT metrics on validation data, save them and log them
+        if self.available_data and pl_module.logger is not None and hasattr(pl_module.logger, 'experiment'):
+            mot_metrics_summary = self._compute_mot_metrics(trainer.current_epoch, pl_module, oracle_results=False)
+            if self.compute_oracle_results:
+                for metric in pl_module.hparams['eval_params']['mot_metrics_to_norm']:
+                    mot_metrics_summary['norm_' + metric] = mot_metrics_summary[metric] / trainer.oracle_metrics[metric]
+            metric_names = pl_module.hparams['eval_params']['mot_metrics_to_log']
+            if pl_module.hparams['eval_params']['log_per_seq_metrics']:
+                metrics_log ={f'{metric}/val/{seq}': met_dict[seq] for metric, met_dict in mot_metrics_summary.items() for seq in
+                                list(self.dataset.seq_names) + ['OVERALL'] if metric in metric_names}
+
+            else:
+                metrics_log ={f'{metric}/val': met_dict['OVERALL'] for metric, met_dict in mot_metrics_summary.items()
+                                if metric in metric_names}
+                pl_module.logger.log_metrics(metrics_log, step = trainer.global_step)
+
     def on_epoch_end(self, trainer, pl_module):
         # Compute MOT metrics on validation data, save them and log them
         if self.available_data:
