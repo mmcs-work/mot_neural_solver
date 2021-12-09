@@ -4,7 +4,7 @@ from sacred import Experiment
 from mot_neural_solver.utils.evaluation import MOTMetricsLogger
 from mot_neural_solver.utils.misc import make_deterministic, get_run_str_and_save_dir, ModelCheckpoint
 
-from mot_neural_solver.path_cfg import OUTPUT_PATH
+from mot_neural_solver.path_cfg import OUTPUT_PATH, DRIVE_OUTPUT_PATH
 import os.path as osp
 
 from mot_neural_solver.pl_module.pl_module import MOTNeuralSolver
@@ -76,7 +76,7 @@ def main(_config, _run):
                       check_val_every_n_epoch=_config['eval_params']['check_val_every_n_epoch'],
                       nb_sanity_val_steps=0,
                       logger =logger,
-                      default_save_path=osp.join(OUTPUT_PATH, 'experiments', run_str))
+                      default_save_path=osp.join(DRIVE_OUTPUT_PATH, 'experiments', run_str))
     trainer.fit(model)
 
 

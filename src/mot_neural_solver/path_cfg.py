@@ -19,3 +19,5 @@ if DATA_PATH is None:
 
 if OUTPUT_PATH is None:
     OUTPUT_PATH = osp.join(PROJECT_PATH, 'output')
+
+DRIVE_OUTPUT_PATH = '/content/drive/MyDrive/output/'
