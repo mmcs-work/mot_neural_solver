@@ -59,7 +59,8 @@ def main(_config, _run):
     run_str, save_dir = get_run_str_and_save_dir(_config['run_id'], _config['cross_val_split'], _config['add_date'])
 
     if _config['train_params']['tensorboard']:
-        logger = TensorBoardLogger(OUTPUT_PATH, name='experiments', version=run_str)
+        logger = TensorBoardLogger(DRIVE_OUTPUT_PATH, name='experiments', version=run_str)
+        #logger = TensorBoardLogger(OUTPUT_PATH, name='experiments', version=run_str)
 
     else:
         logger = None
