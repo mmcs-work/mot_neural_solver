@@ -1,7 +1,7 @@
 ckpt_path: 
 train_params:
   batch_size: 8
-  num_epochs: 10
+  num_epochs: 5
   optimizer:
     type: Adam
     args:
@@ -56,7 +56,7 @@ dataset_params:
                       # by an edge (setting it to a num is dangerous, as dist in frames depends on fps...) (should use seconds instead)
   min_detects: 25 # Minimum number of detections allowed so that a graph is sampled
   max_detects: 500 # Maximum number of detections allowed
-  top_k_nns: 50  # Top K-nearest neighbors (w.r.t reid score) to which a node can be  connected in the graph
+  top_k_nns: 70  # Top K-nearest neighbors (w.r.t reid score) to which a node can be  connected in the graph
   reciprocal_k_nns: True  # Indicates whether, connected nodes in the graph have to be
                           # reciprocal NNs or not (i.e. (i, j) is an edge <--> i is a k-nn for j and
                           # j is a k-nn for i
@@ -77,8 +77,8 @@ dataset_params:
     static: 6
 
 data_splits: # See src/mot_neural_solver/data/splits.py
-  train: ['ctmcv1_split_1_train_gt']  #['mot15_train_gt'] #['mot15_train_gt'] #  'mot17_split_1_train_gt']
-  val: 'split_1_ctmc_val' #'split_1_val' # #'split_1_val'
+  train: ['ctmc_train_gt']  #['mot15_train_gt'] #['mot15_train_gt'] #  'mot17_split_1_train_gt']
+  val: #'split_1_ctmc_val' #'split_1_val' # #'split_1_val'
   # test: ['mot15_test'] #, 'mot17_test']
 # data_splits: # See src/mot_neural_solver/data/splits.py
 #   train: ['mot17_split_1_train_gt'] #,'mot15_train_gt'] #['mot15_train_gt'] #  'mot17_split_1_train_gt']

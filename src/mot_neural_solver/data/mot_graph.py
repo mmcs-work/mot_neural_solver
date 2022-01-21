@@ -261,7 +261,7 @@ class MOTGraph(object):
         reid_embeddings, node_feats = self._load_appearance_data()
 
         # Determine graph connectivity (i.e. edges) and compute edge features
-        edge_ixs, edge_feats_dict = self._get_edge_ixs(reid_embeddings)
+        edge_ixs, edge_feats_dict = self._get_edge_ixs(node_feats)
         #print(edge_ixs.shape)
         if edge_feats_dict is None:
             edge_feats_dict = compute_edge_feats_dict(edge_ixs = edge_ixs, det_df = self.graph_df,
@@ -274,8 +274,8 @@ class MOTGraph(object):
         emb_dists = []
 
         for i in range(0, edge_ixs.shape[1], 50000):
-            emb_dists.append(F.pairwise_distance(reid_embeddings[edge_ixs[0][i:i + 50000]],
-                                                 reid_embeddings[edge_ixs[1][i:i + 50000]]).view(-1, 1))
+            emb_dists.append(F.pairwise_distance(node_feats[edge_ixs[0][i:i + 50000]],
+                                                 node_feats[edge_ixs[1][i:i + 50000]]).view(-1, 1))
 
 
         emb_dists = torch.cat(emb_dists, dim=0)
