@@ -95,7 +95,6 @@ MOV_CAMERA_DICT  =    {
     'PL1Ut-run02': False,
     'PL1Ut-run04': False,
     'RK-13-run02': False,
-    'testseq.txt': False,
     'U2O-S-run02': False,
     'U2O-S-run04': False,
 }
