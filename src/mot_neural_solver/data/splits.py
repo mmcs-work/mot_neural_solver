@@ -12,7 +12,7 @@ add_ctmcv1_train_seqs = []
 _SPLITS['ctmcv1_train_gt'] = {'CTMCCVPR20/train': ctmcv1_train_seqs + add_ctmcv1_train_seqs}
 
 _SPLITS['ctmcv1_split_1_train_gt'] = {'CTMCCVPR20/train': ctmcv1_train_seqs}
-_SPLITS['split_1_ctmc_val'] = {'CTMCCVPR20/train': ['A-10-run01']}
+_SPLITS['split_1_ctmc_val'] = {'CTMCCVPR20/test': ['A-10-run02']}
 _SPLITS['ctmcv1_split_2_train_gt'] = {'CTMCCVPR20/train': ['A-10-run01']}
 _SPLITS['split_2_ctmc_val'] = {'CTMCCVPR20/train': ['3T3-run01']}
 

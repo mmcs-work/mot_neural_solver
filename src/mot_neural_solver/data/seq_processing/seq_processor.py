@@ -26,7 +26,7 @@ import numpy as np
 from lapsolver import solve_dense
 
 from mot_neural_solver.data.seq_processing.MOTCha_loader import get_mot_det_df, get_mot_det_df_from_gt
-from mot_neural_solver.data.seq_processing.CTMCV1_loader_mot17 import get_ctmcv1_det_df_from_gt_mot17
+from mot_neural_solver.data.seq_processing.CTMCV1_loader_mot17 import get_ctmcv1_det_df_from_gt_mot17, get_ctmcv1_det_df_mot17
 from mot_neural_solver.data.seq_processing.MOT15_loader import get_mot15_det_df, get_mot15_det_df_from_gt
 from mot_neural_solver.data.seq_processing.CTMCV1_loader import get_ctmcv1_det_df_from_gt
 from mot_neural_solver.utils.iou import iou
@@ -54,7 +54,8 @@ _SEQ_TYPE_DETS_DF_LOADER = {'MOT': get_mot_det_df,
                             'MOT15': get_mot15_det_df,
                             'MOT15_gt': get_mot15_det_df_from_gt,
                             # 'CTMCV1_gt':get_ctmcv1_det_df_from_gt}
-                            'CTMCV1_gt':get_ctmcv1_det_df_from_gt_mot17}
+                            'CTMCV1_gt':get_ctmcv1_det_df_from_gt_mot17,
+                            'CTMCV1': get_ctmcv1_det_df_mot17}
 
 # Determines whether boxes are allowed to have some area outside the image (all GT annotations in MOT15 are inside img
 # hence we crop its detections to also be inside it)
@@ -111,6 +112,8 @@ ctmcv1_seqs+= ['LLC-MK2-run02a','MDBK-run03','MDOK-run03','OK-run03','PL1Ut-run0
 ctmcv1_seqs+= ['A-10-run07','BPAE-run01','CRE-BAG2-run03','LLC-MK2-run03','MDBK-run05','MDOK-run05']
 ctmcv1_seqs+= ['OK-run05','RK-13-run01','3T3-run09','A-549-run03','BPAE-run03','CV-1-run01','LLC-MK2-run05']
 ctmcv1_seqs+= ['MDBK-run07','MDOK-run07','OK-run07','RK-13-run03']
+ctmcv1_test_seqs = ['3T3-run02','3T3-run04','3T3-run06','3T3-run08','A-10-run02','A-10-run04','A-10-run06','A-549-run02','A-549-run04','APM-run02','APM-run04','APM-run06','BPAE-run02','BPAE-run04','BPAE-run06','CRE-BAG2-run02','CRE-BAG2-run04','CV-1-run02','CV-1-run04','LLC-MK2-run02b','LLC-MK2-run04','LLC-MK2-run06','MDBK-run02','MDBK-run04','MDBK-run06','MDBK-run08','MDBK-run10','MDOK-run02','MDOK-run04','MDOK-run06','MDOK-run08','OK-run02','OK-run04','OK-run06','PL1Ut-run02','PL1Ut-run04','RK-13-run02','testseq.txt','U2O-S-run02','U2O-S-run04']
+
 # , 'KITTI-13', 'ETH-Sunnyday', 'ETH-Bahnhof', 'PETS09-S2L1', 'TUD-Campus', 'TUD-Stadtmitte']
 # # mot15_seqs += ['ADL-Rundle-6', 'ADL-Rundle-8', 'Venice-2', 'ETH-Pedcross2']
 # mot15_seqs += [seq_name + '-GT' for seq_name in mot15_seqs]
@@ -124,6 +127,8 @@ ctmcv1_seqs+= ['MDBK-run07','MDOK-run07','OK-run07','RK-13-run03']
 #         _SEQ_TYPES[seq_name] = 'MOT15'
 for seq_name in ctmcv1_seqs:
     _SEQ_TYPES[seq_name] = 'CTMCV1_gt'
+for seq_name in ctmcv1_test_seqs:
+    _SEQ_TYPES[seq_name] = 'CTMCV1'
 #_SEQ_TYPES['3T3-run01'] = 'CTMCV1_gt'
 ##########################################################################################
 # Classes used to store and process detections for every sequence
