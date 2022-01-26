@@ -56,7 +56,48 @@ MOV_CAMERA_DICT  =    {
     'MDBK-run07':False,
     'MDOK-run07':False,
     'OK-run07':False,
-    'RK-13-run03':False
+    'RK-13-run03':False,
+    # test
+    '3T3-run02': False,
+    '3T3-run04': False,
+    '3T3-run06': False,
+    '3T3-run08': False,
+    'A-10-run02': False,
+    'A-10-run04': False,
+    'A-10-run06': False,
+    'A-549-run02': False,
+    'A-549-run04': False,
+    'APM-run02': False,
+    'APM-run04': False,
+    'APM-run06': False,
+    'BPAE-run02': False,
+    'BPAE-run04': False,
+    'BPAE-run06': False,
+    'CRE-BAG2-run02': False,
+    'CRE-BAG2-run04': False,
+    'CV-1-run02': False,
+    'CV-1-run04': False,
+    'LLC-MK2-run02b': False,
+    'LLC-MK2-run04': False,
+    'LLC-MK2-run06': False,
+    'MDBK-run02': False,
+    'MDBK-run04': False,
+    'MDBK-run06': False,
+    'MDBK-run08': False,
+    'MDBK-run10': False,
+    'MDOK-run02': False,
+    'MDOK-run04': False,
+    'MDOK-run06': False,
+    'MDOK-run08': False,
+    'OK-run02': False,
+    'OK-run04': False,
+    'OK-run06': False,
+    'PL1Ut-run02': False,
+    'PL1Ut-run04': False,
+    'RK-13-run02': False,
+    'testseq.txt': False,
+    'U2O-S-run02': False,
+    'U2O-S-run04': False,
 }
 
 
@@ -98,7 +139,7 @@ def _build_seq_info_dict_ctmcv1_withmot17(seq_name, data_root_path, dataset_para
                      }
     return seq_info_dict
 
-def get_mot_det_df(seq_name, data_root_path, dataset_params):
+def get_ctmcv1_det_df_mot17(seq_name, data_root_path, dataset_params):
 
     seq_path = osp.join(data_root_path, seq_name)
     detections_file_path = osp.join(seq_path, f"det/{dataset_params['det_file_name']}.txt")
@@ -124,7 +165,7 @@ def get_mot_det_df(seq_name, data_root_path, dataset_params):
 
     assert osp.exists(det_df['frame_path'].iloc[0])
 
-    seq_info_dict = _build_scene_info_dict_mot17(seq_name, data_root_path, dataset_params)
+    seq_info_dict = _build_seq_info_dict_ctmcv1_withmot17(seq_name, data_root_path, dataset_params)
     seq_info_dict['is_gt'] = False
     if seq_info_dict['has_gt']: # Return the corresponding ground truth, if available, for the ground truth assignment
         gt_file_path = osp.join(seq_path, f"gt/gt.txt")
