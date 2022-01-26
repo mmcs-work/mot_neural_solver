@@ -49,7 +49,8 @@ add_ctmcv1_train_seqs = []
 
 strat_over_framenum = ['A-10-run07', 'BPAE-run07', 'MDOK-run01', '3T3-run03', '3T3-run05', 'MDOK-run07', 'U2O-S-run05', 'U2O-S-run03', '3T3-run07', 'CRE-BAG2-run01', 'MDOK-run05', 'LLC-MK2-run01', 'PL1Ut-run03', 'MDBK-run07', 'APM-run01', '3T3-run01', 'CRE-BAG2-run03', 'OK-run07', 'A-549-run03', 'BPAE-run01', 'PL1Ut-run05', 'OK-run03', 'OK-run05', 'RK-13-run03', 'MDBK-run03', 'MDBK-run01','MDBK-run09', 'LLC-MK2-run07', '3T3-run09', 'MDOK-run09', 'LLC-MK2-run03', 'APM-run05', 'A-10-run01', 'A-10-run03', 'LLC-MK2-run05', 'CV-1-run01', 'BPAE-run03', 'BPAE-run05', 'PL1Ut-run01', 'CV-1-run03', 'A-10-run05', 'RK-13-run01', 'MDBK-run05', 'APM-run03', 'OK-run01', 'LLC-MK2-run02a', 'MDOK-run03']
 _SPLITS['ctmc_train_gt'] = {'CTMCCVPR20/train': strat_over_framenum}
-
+test_set = ['3T3-run02','3T3-run04','3T3-run06','3T3-run08','A-10-run02','A-10-run04','A-10-run06','A-549-run02','A-549-run04','APM-run02','APM-run04','APM-run06','BPAE-run02','BPAE-run04','BPAE-run06','CRE-BAG2-run02','CRE-BAG2-run04','CV-1-run02','CV-1-run04','LLC-MK2-run02b','LLC-MK2-run04','LLC-MK2-run06','MDBK-run02','MDBK-run04','MDBK-run06','MDBK-run08','MDBK-run10','MDOK-run02','MDOK-run04','MDOK-run06','MDOK-run08','OK-run02','OK-run04','OK-run06','PL1Ut-run02','PL1Ut-run04','RK-13-run02','testseq.txt','U2O-S-run02','U2O-S-run04']
+_SPLITS['ctmc_train_gt_test'] = {'CTMCCVPR20/test': test_set}
 
 
 #################
