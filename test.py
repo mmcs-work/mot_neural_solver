@@ -10,3 +10,6 @@ for f in glob.glob('./testset/cont_det/*.txt'):
     if dir in listdir:
         os.makedirs(os.path.dirname(f'./data/CTMCCVPR20/test/{dir}/det/tracktor_prepr_det.txt'), exist_ok=True)
         shutil.copyfile(f,f'./data/CTMCCVPR20/test/{dir}/det/tracktor_prepr_det.txt')
+    if dir not in listdir:
+        os.makedirs(os.path.dirname(f'./data/CTMCCVPR20/train/{dir}/det/tracktor_prepr_det.txt'), exist_ok=True)
+        shutil.copyfile(f,f'./data/CTMCCVPR20/train/{dir}/det/tracktor_prepr_det.txt')
