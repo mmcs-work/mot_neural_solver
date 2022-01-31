@@ -1,7 +1,7 @@
 ckpt_path: 
 train_params:
   batch_size: 8
-  num_epochs: 10
+  num_epochs: 5
   optimizer:
     type: Adam
     args:
@@ -151,4 +151,4 @@ graph_model_params:
   cnn_params:
     arch: resnet50
     model_weights_path:
-      resnet50: trained_models/reid/resnet50_market_cuhk_duke.tar-232
+      resnet50: trained_models/reid/resnet50_ctmc.pth.tar
