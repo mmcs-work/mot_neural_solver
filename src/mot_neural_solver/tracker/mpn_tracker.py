@@ -207,6 +207,7 @@ class MPNTracker:
 
         # Each Connected Component is a Ped Id. Assign those values to our DataFrame:
         final_projected_output = subseq_graph.graph_df.copy()
+        # SUBMISSION_FIX: Change labels here to get ped_id's starting from 1's
         final_projected_output['ped_id'] = labels
         final_projected_output = final_projected_output[VIDEO_COLUMNS + ['conf', 'detection_id']].copy()
 
