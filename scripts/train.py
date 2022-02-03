@@ -18,7 +18,7 @@ SETTINGS.CONFIG.READ_ONLY_CONFIG=False
 
 ex = Experiment()
 ex.add_config('configs/tracking_cfg.yaml')
-ex.add_config({'run_id': 'train_ctmc_full_gt',
+ex.add_config({'run_id': 'train_ctmc_full_gt_w_reid',
                'add_date': True,
                'cross_val_split': None})
 
