@@ -1,3 +1,7 @@
+# Updates for cell tracking
+
+For setting up this project, you can use google colab. After cloning the repository execute `bash oop.sh` which would take care of all the dependencies and install necessary packages to run the source code. For training the procedure stays exactly same as before. You can select your preferrable path location in `path_cfg.py` (For most of our code since google drive is used, DRIVE_OUTPUT_PATH is used). For inference, the other branch is used `finsubgt1`. Check that for further instructions.
+
 # Learning a Neural Solver for Multiple Object Tracking
 
 This the official implementation of our **CVPR 2020 (oral)** paper *Learning a Neural Solver for Multiple Object Tracking* ([Guillem Brasó](https://dvl.in.tum.de/team/braso/), [Laura Leal-Taixe](https://dvl.in.tum.de/team/lealtaixe/))  
