@@ -8,7 +8,7 @@ For setting up this project, you can use google colab. After cloning the reposit
 ![Method Visalization](data/method_diagram.JPG)
 
 We have setup a cross validation folds which are representative of the original test set. Private score reflects with the cross validation scores.
-![Cross Validation Summary](data/cross_val_summary.png)
+![Cross Validation Summary](data/cross_val_ summary.png)
 
 # Learning a Neural Solver for Multiple Object Tracking
 
