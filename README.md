@@ -2,6 +2,14 @@
 
 For setting up this project, you can use google colab. After cloning the repository execute `bash oop.sh` which would take care of all the dependencies and install necessary packages to run the source code. For training the procedure stays exactly same as before. You can select your preferrable path location in `path_cfg.py` (For most of our code since google drive is used, DRIVE_OUTPUT_PATH is used). For inference, the other branch is used `finsubgt1`. Check that for further instructions.
 
+# Cell Tracking
+![Cell Tracking Components](data/cell_tracking_steps.JPG) We process the cell dataset and train the re-identification and message passing network for tracking of cells. Framewise predictions are made which are combined to have the tracking for one cell. We don't train any separate detection network. For the CTMC submission, we have considered the detections from existing solutions.
+
+![Method Visalization](data/method_diagram.JPG)
+
+We have setup a cross validation folds which are representative of the original test set. Private score reflects with the cross validation scores.
+![Cross Validation Summary](data/cross_val_summary.png)
+
 # Learning a Neural Solver for Multiple Object Tracking
 
 This the official implementation of our **CVPR 2020 (oral)** paper *Learning a Neural Solver for Multiple Object Tracking* ([Guillem Brasó](https://dvl.in.tum.de/team/braso/), [Laura Leal-Taixe](https://dvl.in.tum.de/team/lealtaixe/))  
